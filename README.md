@@ -17,3 +17,47 @@ sanity test: Enter python command-line interface and run
 import torch
 import mamba_ssm
 ```
+
+## Model Training
+
+### Data preprocessing
+
+```bash
+nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
+```
+
+### Train 2D models
+
+- Train 2D `U-Mamba_Bot` model
+
+```bash
+nnUNetv2_train DATASET_ID 2d FOLD -tr nnUNetTrainerUMambaBot
+```
+
+- Train 2D `U-Mamba_Enc` model
+
+```bash
+nnUNetv2_train DATASET_ID 2d FOLD -tr nnUNetTrainerUMambaEnc
+```
+
+### Train 3D models
+
+- Train 3D `U-Mamba_Bot` model
+
+```bash
+nnUNetv2_train DATASET_ID 3d_fullres FOLD -tr nnUNetTrainerUMambaBot
+```
+
+- Train 3D `U-Mamba_Enc` model
+
+```bash
+nnUNetv2_train DATASET_ID 3d_fullres FOLD -tr nnUNetTrainerUMambaEnc
+```
+
+- Find best configuration
+
+```bash
+nnUNetv2_find_best_configuration DATASET_ID -c 2d 3d_fullres -tr nnUNetTrainerUMambaBot nnUNetTrainerUMambaEnc
+```
+
+
