@@ -1,4 +1,4 @@
-# MyoPS2024-UMamba
+# RGU-Mamba
 
 ## Installation
 
