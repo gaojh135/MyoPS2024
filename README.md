@@ -44,5 +44,15 @@ nnUNetv2_train DATASET_ID 3d_fullres FOLD -tr nnUNetTrainerUMambaEnc
 nnUNetv2_find_best_configuration DATASET_ID -c 2d 3d_fullres -tr nnUNetTrainerUMambaEnc
 ```
 
+- Predict
+```bash
+nnUNetv2_predict -d DATASET_ID -i INPUT_FOLDER -o OUTPUT_FOLDER_MODEL_1 -f  0 1 2 3 4 -tr nnUNetTrainerUMambaEncNoAMP -c 2d -p nnUNetPlans --save_probabilities
+
+nnUNetv2_predict -d DATASET_ID -i INPUT_FOLDER -o OUTPUT_FOLDER_MODEL_2 -f  0 1 2 3 4 -tr nnUNetTrainerUMambaEncNoAMP -c 3d_fullres -p nnUNetPlans --save_probabilities
+```
+- Ensemble
+```bash
+nnUNetv2_ensemble -i OUTPUT_FOLDER_MODEL_1 OUTPUT_FOLDER_MODEL_2 -o OUTPUT_FOLDER -np 8
+```
 
 
