@@ -10,6 +10,7 @@ Requirements: `Ubuntu 20.04`, `CUDA 11.8`
 3. Install [Mamba](https://github.com/state-spaces/mamba): `pip install causal-conv1d>=1.2.0` and `pip install mamba-ssm --no-cache-dir`
 4. Download code: `git clone https://github.com/bowang-lab/U-Mamba`
 5. `cd U-Mamba/umamba` and run `pip install -e .`
+6. `pip install PYMIC`
 
 sanity test: Enter python command-line interface and run
 
@@ -17,6 +18,45 @@ sanity test: Enter python command-line interface and run
 import torch
 import mamba_ssm
 ```
+
+## Coarse Segmentation
+
+### Data conversion
+```bash
+python data_conversion_coarse_stage.py
+```
+### Crop images
+```bash
+python crop_for_coarse_segment.py
+```
+### Histogram Matching
+```bash
+match_for_coarse_segment.py
+```
+
+## Model Training
+
+```bash
+…………
+```
+
+## Fine Segmentation
+### Data conversion
+```bash
+python data_conversion_fine_stage.py
+```
+### Crop images
+```bash
+crop_for_fine_segment.py
+```
+### Histogram Matching
+```bash
+match_for_fine_segment.py
+```
+
+
+
+
 
 ## Model Training
 
