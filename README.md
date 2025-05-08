@@ -50,19 +50,19 @@ python crop_coarse.py -d DATASET_ID
 
 ```bash
 # Pre‑process
-nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
+nnUNetv2_plan_and_preprocess -d DATASET_ID -pl nnUNetPlannerResEncM --verify_dataset_integrity 
 
 # Five‑fold cross‑validation
 for FOLD in 0 1 2 3 4; do
-  nnUNetv2_train DATASET_ID 2d         $FOLD -tr UMambaEncTrainer --npz
-  nnUNetv2_train DATASET_ID 3d_fullres $FOLD -tr UMambaEncTrainer --npz
+  nnUNetv2_train DATASET_ID 2d         $FOLD -tr UMambaEncNoAMPTrainer -p nnUNetResEncUNetMPlans --npz
+  nnUNetv2_train DATASET_ID 3d_fullres $FOLD -tr UMambaEncNoAMPTrainer -p nnUNetResEncUNetMPlans --npz
 done
 ```
 
 #### Find the best configuration & Run inference
 ```bash
 nnUNetv2_find_best_configuration DATASET_ID -c 2d 3d_fullres
-nnUNetv2_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -d DATASET_ID -c CONFIGURATION -f 0 1 2 3 4 -tr UMambaEncTrainer
+nnUNetv2_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -d DATASET_ID -c CONFIGURATION -f 0 1 2 3 4 -tr UMambaEncNoAMPTrainer -p nnUNetResEncUNetMPlans
 ```
 
 #### Ensemble & Post‑process

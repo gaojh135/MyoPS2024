@@ -16,7 +16,7 @@ class UMamba2Enc_3d(nn.Module):
                  conv_op: Type[_ConvNd],
                  kernel_sizes: Union[int, List[int], Tuple[int, ...]],
                  strides: Union[int, List[int], Tuple[int, ...]],
-                 n_conv_per_stage: Union[int, List[int], Tuple[int, ...]],
+                 n_blocks_per_stage: Union[int, List[int], Tuple[int, ...]],
                  num_classes: int,
                  n_conv_per_stage_decoder: Union[int, Tuple[int, ...], List[int]],
                  conv_bias: bool = False,
@@ -30,7 +30,7 @@ class UMamba2Enc_3d(nn.Module):
                  stem_channels: int = None
                  ):
         super().__init__()
-        n_blocks_per_stage = n_conv_per_stage
+        
         if isinstance(n_blocks_per_stage, int):
             n_blocks_per_stage = [n_blocks_per_stage] * n_stages
         if isinstance(n_conv_per_stage_decoder, int):
