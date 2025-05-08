@@ -1,4 +1,4 @@
-# Code for Code for CARE2024-MyoPS
+# Code for CARE2024-MyoPS
 
 ## Installation
 
