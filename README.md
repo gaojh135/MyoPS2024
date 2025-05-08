@@ -38,46 +38,6 @@ nnUNet_results = join(base, 'nnUNet_results') # or change to os.environ.get('nnU
 
 ## Pipeline
 
-# Code for Code for CARE2024-MyoPS
-
-## Installation
-
-Requirements: `Ubuntu 22.04`, `CUDA 12.1`
-
-```bash
-conda create -n rgumamba python=3.11 -y
-conda activate rgumamba
-conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=12.1 -c pytorch -c nvidia
-pip install causal-conv1d
-pip install mamba-ssm
-git clone https://github.com/gaojh135/MyoPS2024.git
-cd MyoPS2024/nnUNet
-pip install -e .
-```
-## Path settings
-
-```python
-base = './data'
-nnUNet_raw = join(base, 'nnUNet_raw') # or change to os.environ.get('nnUNet_raw')
-nnUNet_preprocessed = join(base, 'nnUNet_preprocessed') # or change to os.environ.get('nnUNet_preprocessed')
-nnUNet_results = join(base, 'nnUNet_results') # or change to os.environ.get('nnUNet_results')
-```
-
-## Data Structure
-```
-.
-├── data
-│   ├── data_raw
-│   ├── CARE2024_MyoPS++
-│   │   ├── aligned_train
-……………………
-│   ├── CARE2024_MyoPS++_valid
-│   │   ├── aligned_train
-……………………
-```
-
-## Pipeline
-
 ### 1. Coarse-seg
 
 ```bash
