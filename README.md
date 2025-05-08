@@ -84,9 +84,11 @@ python crop_fine.py -d DATASET_ID
 ```
 
 ### Model Training
-Follow the same pre-processing and training procedures as described in the Coarse-seg section above, including preprocess, training, configuration selection, and inference:
+Follow the same pre-processing and training procedures as described in the Coarse-seg section above, including preprocess, training, configuration selection, and inference, then
 
 ```bash
 # Restore coarse predictions to original spacing
 python restore_fine.py -d Dataset_ID -i input_folder -o output_folder
 ```
+
+
