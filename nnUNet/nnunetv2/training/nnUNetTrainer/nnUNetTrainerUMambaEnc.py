@@ -14,7 +14,7 @@ class UMambaEncTrainer(nnUNetTrainer):
                  device: torch.device = torch.device('cuda')):
         super().__init__(plans, configuration, fold, dataset_json, device)
 
-        self.initial_lr = 1e-2
+        self.initial_lr = 1e-3
         self.num_epochs = 150
         self.save_every = 5
 

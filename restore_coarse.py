@@ -57,7 +57,7 @@ def main():
         else:
             ref_path = os.path.join(dataset_dir, "imagesTs", f"{case_id}_0000.nii.gz")
 
-        out_path = os.path.join(args.output_dir, f"{case_id}_restored.nii.gz")
+        out_path = os.path.join(args.output_dir, f"{case_id}.nii.gz")
         save_nifti_image(restored, out_path, ref_path)
         print(f"[OK] Restored: {out_path}")
 

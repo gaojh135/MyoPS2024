@@ -79,7 +79,7 @@ python restore_coarse.py -d Dataset_ID -i input_folder -o output_folder
 ## 2. Fine-seg 
 
 ```bash
-python data_converison_fine_region.py # You can change task_id & task_name if you want
+python data_converison_fine_region.py # You need to modify predict_data_dir; optionally, you can also change task_id and task_name.
 python crop_fine.py -d DATASET_ID
 ```
 
