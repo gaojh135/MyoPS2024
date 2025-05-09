@@ -91,4 +91,21 @@ Follow the same pre-processing and training procedures as described in the Coars
 python restore_fine.py -d Dataset_ID -i input_folder -o output_folder
 ```
 
+## Citation
+
+If you find this repository helpful in your research, please consider citing our paper:
+
+```bibtex
+@inproceedings{Gao2024RGUMambaAU,
+  title={RGU-Mamba: An U-Mamba Network with Region-Based Training Optimized for Domain Generalization Applied to Myocardial Scar and Edema Segmentation},
+  author={Jinghong Gao and Yuanhang Cai and Zekai Zhao and Xin Lan and Qicheng Huang and Linglong Lan and Tie-Qiang Li},
+  booktitle={CARE@MICCAI},
+  year={2024},
+  url={https://api.semanticscholar.org/CorpusID:277820725}
+}
+```
+
+## Acknowledgements
+
+[nnUNet](https://github.com/MIC-DKFZ/nnUNet), [U-Mamba](https://github.com/bowang-lab/U-Mamba)
 
