@@ -63,7 +63,7 @@ if __name__ == '__main__':
                           channel_names={0: 'C0', 1: 'LGE', 2: 'T2'},
                           labels={
                               'background': 0,
-                              'myops': 1,
+                              'myo': 1,
                               'lv': 2,
                               'rv': 3
                           },
