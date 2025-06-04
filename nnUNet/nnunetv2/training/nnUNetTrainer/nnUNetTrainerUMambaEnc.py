@@ -6,8 +6,8 @@ from nnunetv2.training.nnUNetTrainer.nnUNetTrainer import nnUNetTrainer
 from nnunetv2.utilities.network_initialization import InitWeights_He
 from nnunetv2.nets.UMambaEnc_2d import UMambaEnc_2d
 from nnunetv2.nets.UMambaEnc_3d import UMambaEnc_3d
-# import os
-# os.environ['nnUNet_compile'] = '0'
+import os
+os.environ['nnUNet_compile'] = '0'
 
 class UMambaEncTrainer(nnUNetTrainer):
     def __init__(self, plans: dict, configuration: str, fold: int, dataset_json: dict, 
